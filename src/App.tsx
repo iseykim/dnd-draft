@@ -1,6 +1,8 @@
+import { useCallback } from "react"
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
 import { useImmer } from "use-immer"
+import Box from "./Box"
 
 function App() {
   const [data, setData] = useImmer([
@@ -20,11 +22,21 @@ function App() {
     })
   }
 
+  const moveCard = useCallback((i: number) => {
+    console.log(i)
+  }, [])
+
   return (
     <div className="p-2 bg-slate-800 h-screen">
       <h1 className="text-2xl text-white text-center">TailwindCSS Starter</h1>
 
-      <DndProvider backend={HTML5Backend}></DndProvider>
+      <DndProvider backend={HTML5Backend}>
+        <div className="flex m-8">
+          <Box moveCard={() => moveCard(0)} card />
+          <Box moveCard={() => moveCard(1)} />
+          <Box moveCard={() => moveCard(2)} />
+        </div>
+      </DndProvider>
       <div className="flex justify-center">
         <button className="text-white border border-white p-2" onClick={addData}>
           Add
