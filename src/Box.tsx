@@ -1,4 +1,3 @@
-import { ReactElement } from "react"
 import Card from "./Card"
 import { useDrop } from "react-dnd"
 

@@ -1,6 +1,7 @@
+import { ReactElement } from "react"
 import { useDrag } from "react-dnd"
 
-export default function Card() {
+export default function Card({ children }: { children?: ReactElement | string }) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "card",
     collect: (m) => ({
@@ -13,7 +14,7 @@ export default function Card() {
       ref={drag}
       className={`flex justify-center items-center bg-pink-200 w-full h-full ${isDragging && "bg-pink-400"}`}
     >
-      Card
+      {children ?? "Card"}
     </div>
   )
 }
