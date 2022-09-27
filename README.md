@@ -13,3 +13,7 @@
 - [ ] Create nested list visualization and data structure to mock
 - [ ] Separately test `immer` updates
 - [ ] Implement simplest implementations
+
+
+https://user-images.githubusercontent.com/76843977/192199215-0ebe4033-49f4-4fc9-85a1-9ce7374151b5.mp4
+
